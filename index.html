@@ -30,7 +30,7 @@
 <main>
   <header>
     <h1>Boost Me! – Privacy Policy</h1>
-    <p><em>Last updated: 17 August 2025</em></p>
+    <p><em>Last updated: 1 September 2025</em></p>
   </header>
 
   <section id="who-we-are">
@@ -46,6 +46,7 @@
   <section id="regional-availability">
     <h2>3. Regional availability & compliance</h2>
     <p><strong>The App is currently not distributed in the EEA, the United Kingdom, or Switzerland.</strong> Accordingly, the App does <strong>not</strong> present an in-app consent dialog (CMP). If we expand distribution to those regions, we will implement a Google-certified Consent Management Platform (UMP, IAB TCF 2.2) and update this Policy.</p>
+    <p>Outside the EEA/UK/CH, the App does not present a consent dialog; analytics and ads operate under the controls described in this Policy and your Android settings.</p>
   </section>
 
   <section id="data-we-collect">
@@ -68,10 +69,16 @@
           <td>Google Play Console (aggregated; no direct access to personal data by us)</td>
         </tr>
         <tr>
-          <td>In‑app preferences</td>
+          <td>In-app preferences</td>
           <td>Favourite boosts, dismissed boosts, volume level, theme, alarm schedules</td>
           <td>Provide core functionality &amp; remember your settings</td>
           <td><strong>Locally on your device only</strong></td>
+        </tr>
+        <tr>
+          <td>Analytics (Firebase / Google Analytics for Firebase)</td>
+          <td>Anonymous app usage events (e.g., screen views, button taps, session starts), timestamps, coarse device info (OS version, app version), and a rotating app instance identifier. We do not enable Google Signals or granular device &amp; location collection.</td>
+          <td>Understand feature usage, improve stability and UX, measure engagement</td>
+          <td>Processed by Google Analytics (aggregated reporting to us)</td>
         </tr>
       </tbody>
     </table>
@@ -79,8 +86,8 @@
   </section>
 
   <section id="third-parties">
-    <h2>5. Third‑party services & advertising</h2>
-    <p>The App integrates the following third‑party SDK, which is governed by its own privacy terms:</p>
+    <h2>5. Third-party services & advertising</h2>
+    <p>The App integrates the following third-party SDKs, which are governed by their own privacy terms:</p>
     <table>
       <thead>
         <tr><th>Service</th><th>Purpose</th><th>Links</th></tr>
@@ -94,15 +101,25 @@
             <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google Privacy Policy</a>
           </td>
         </tr>
+        <tr>
+          <td>Firebase / Google Analytics for Firebase (GA4)</td>
+          <td>Measure anonymous app usage and performance</td>
+          <td>
+            <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer">Firebase Privacy &amp; Security</a> ·
+            <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google Privacy Policy</a>
+          </td>
+        </tr>
       </tbody>
     </table>
+
+    <p><strong>Analytics configuration:</strong> We have disabled Google Signals and granular device/location collection. Data retention is set to <strong>2 months</strong> for event data and <strong>14 months</strong> for user-level data (no “reset on new activity”).</p>
 
     <p>Google may collect device information (e.g., Advertising ID, IP address) to deliver and measure ads.</p>
 
     <blockquote>
-      <p><strong>Ad personalisation control:</strong> Whether ads are <strong>personalised</strong> or <strong>non‑personalised</strong> is determined by your Android system setting:</p>
+      <p><strong>Ad personalisation control:</strong> Whether ads are <strong>personalised</strong> or <strong>non-personalised</strong> is determined by your Android system setting:</p>
       <p><strong>Android Settings → Google → Ads → <em>Opt out of Ads Personalisation</em> / <em>Delete advertising ID</em></strong>.</p>
-      <p>The App <strong>does not</strong> present its own consent dialog and <strong>does not</strong> offer an in‑app toggle for ad personalisation. If your device is opted‑out (or the ID is unavailable/deleted), the App requests <strong>non‑personalised</strong> ads; otherwise, Google may show <strong>personalised</strong> ads based on your device‑level choice.</p>
+      <p>The App <strong>does not</strong> present its own consent dialog and <strong>does not</strong> offer an in-app toggle for ad personalisation. If your device is opted-out (or the ID is unavailable/deleted), the App requests <strong>non-personalised</strong> ads; otherwise, Google may show <strong>personalised</strong> ads based on your device-level choice.</p>
     </blockquote>
   </section>
 
@@ -123,6 +140,11 @@
           <td><code>ACCESS_NETWORK_STATE</code> <em>(normal)</em></td>
           <td>Detect connectivity to avoid unnecessary requests and improve reliability</td>
           <td></td>
+        </tr>
+        <tr>
+          <td><code>com.google.android.gms.permission.AD_ID</code> <em>(normal)</em></td>
+          <td>Access the Advertising ID (if available) for ads and measurement</td>
+          <td>Android may restrict or reset this ID based on your system settings</td>
         </tr>
         <tr>
           <td><code>POST_NOTIFICATIONS</code> (Android 13+)</td>
@@ -153,10 +175,11 @@
     <h2>7. How we use data</h2>
     <ul>
       <li>Provide core features such as displaying boosts, saving favourites, and scheduling exact alarms.</li>
-      <li>Display <strong>non‑personalised or personalised ads</strong> — controlled by your Android ad‑personalisation setting (see § 5). There is <strong>no in‑app consent flow</strong>.</li>
+      <li>Display <strong>non-personalised or personalised ads</strong> — controlled by your Android ad-personalisation setting (see § 5). There is <strong>no in-app consent flow</strong>.</li>
       <li>Diagnose crashes and improve performance (aggregated store statistics only).</li>
+      <li>Measure anonymous usage with Firebase / Google Analytics for Firebase to understand which features are used and to improve reliability (no Google Signals; limited device/location data).</li>
     </ul>
-    <p>We do <strong>not sell or rent</strong> any data. We do <strong>not</strong> transfer locally stored in‑app data off your device.</p>
+    <p>We do <strong>not sell or rent</strong> any data. We do <strong>not</strong> transfer locally stored in-app data off your device.</p>
   </section>
 
   <section id="legal-basis">
@@ -169,19 +192,23 @@
       <tbody>
         <tr>
           <td><strong>Ad personalisation</strong></td>
-          <td><strong>Consent</strong> (Art. 6(1)(a) GDPR) — derived solely from your device‑level Android Ads Personalisation setting. If opted‑out or unavailable, we request <strong>non‑personalised</strong> ads. We do not rely on legitimate interest for personalising ads and we do not show an in‑app consent dialog.</td>
+          <td><strong>Consent</strong> (Art. 6(1)(a) GDPR) — derived solely from your device-level Android Ads Personalisation setting. If opted-out or unavailable, we request <strong>non-personalised</strong> ads. We do not rely on legitimate interest for personalising ads and we do not show an in-app consent dialog.</td>
         </tr>
         <tr>
           <td>Ad delivery/measurement & fraud prevention</td>
           <td><strong>Legitimate interests</strong> (Art. 6(1)(f)) to fund the App responsibly, keep services secure, and measure performance.</td>
         </tr>
         <tr>
-          <td>Local in‑app preferences</td>
+          <td>Local in-app preferences</td>
           <td><strong>Performance of a contract</strong> (Art. 6(1)(b)) — necessary to deliver requested functionality.</td>
         </tr>
         <tr>
           <td>Aggregated analytics from the store</td>
           <td><strong>Legitimate interests</strong> — app maintenance and improvement.</td>
+        </tr>
+        <tr>
+          <td>Firebase / Google Analytics for Firebase (anonymous usage measurement)</td>
+          <td><strong>Legitimate interests</strong> (Art. 6(1)(f)) — to understand feature usage and improve the App; we do not enable Google Signals.</td>
         </tr>
       </tbody>
     </table>
@@ -193,26 +220,28 @@
       <li><strong>Local app data</strong> — remains on your device until you uninstall the App or clear the App’s data in system settings.</li>
       <li><strong>Ad/measurement data</strong> — is retained by Google in accordance with its policies.</li>
     </ul>
+    <p><strong>Firebase / Google Analytics for Firebase:</strong> event data retention is configured to <strong>2 months</strong> and user-level retention to <strong>14 months</strong>. “Reset on new user activity” is turned off.</p>
   </section>
 
   <section id="security">
     <h2>10. Security</h2>
-    <p>All sensitive operations (favourites, schedules) run entirely on‑device. No remote server operated by us stores your in‑app data. While we take care to use the platform securely, no mobile system can guarantee absolute security.</p>
+    <p>All sensitive operations (favourites, schedules) run entirely on-device. No remote server operated by us stores your in-app data. While we take care to use the platform securely, no mobile system can guarantee absolute security.</p>
   </section>
 
   <section id="rights">
     <h2>11. Your rights</h2>
     <p>Depending on your location, you may have rights to access, rectify, erase, restrict or object to processing, obtain data portability, and lodge a complaint with a supervisory authority. Because we do not maintain user accounts, we may ask for your device’s Advertising ID or other proof of use to locate relevant records.</p>
+    <p><strong>Analytics controls:</strong> If you prefer not to share analytics, you can uninstall the App or clear the App’s data in Android settings, which resets the analytics app instance identifier. You may also contact us at the email above to request deletion of analytics data associated with your device; we will forward the request via Google’s tools where applicable.</p>
   </section>
 
   <section id="international">
     <h2>12. International processing</h2>
-    <p>Third‑party providers (e.g., Google) may process data on servers outside your country. Where required, such transfers rely on appropriate safeguards (e.g., Standard Contractual Clauses).</p>
+    <p>Third-party providers (e.g., Google) may process data on servers outside your country. Where required, such transfers rely on appropriate safeguards (e.g., Standard Contractual Clauses).</p>
   </section>
 
   <section id="changes">
     <h2>13. Changes</h2>
-    <p>We may update this Policy from time to time. Material changes will be communicated in‑app or on the store listing. Continued use of the App after changes implies acceptance.</p>
+    <p>We may update this Policy from time to time. Material changes will be communicated in-app or on the store listing. Continued use of the App after changes implies acceptance.</p>
   </section>
 
   <section id="contact">
